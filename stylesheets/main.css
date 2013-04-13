@@ -65,6 +65,11 @@ h2 {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+button {
+	cursor: pointer;
+	font-size: 20px;
+}
+
 .fb-login-button {
 	margin-bottom: 1em;
 }
