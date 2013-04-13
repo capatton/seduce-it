@@ -11,7 +11,7 @@ handlers:
   static_dir: images
 - url: /js
   static_dir: js
-- url: /check/.*
+- url: /check
   script: check.app
 - url: /choose
   script: choose.app
