@@ -8,10 +8,10 @@ window.fbAsyncInit = function() {
           xfbml      : true  // parse XFBML
       });
 
-    FB.getLoginStatus(function(response){
-            var userIdString = response.authResponse.userID;        
+    FB.getLoginStatus(function(response){       
             //not logged in upon opening the page
             if (response.status === 'connected') {
+                var userIdString = response.authResponse.userID; 
                 console.log("CONNECTED");
                 window.location = "check?id=" + userIdString;
             } 
