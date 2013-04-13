@@ -110,6 +110,12 @@ div#content {
 	display: none;
 }
 
+#likeNumberBox {
+	font-size: 50px;
+	text-align: center;
+	width: 100px;
+}
+
 #compliment_taste_f:hover:before {
 	content: "A LOT of her photos";
 }
