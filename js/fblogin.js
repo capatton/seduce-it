@@ -14,8 +14,7 @@ window.fbAsyncInit = function() {
         FB.api('/fql', 'GET', {q: getNameQuery}, function(response) {
           if (response && response.data) {
               console.log("CONNECTED");
-              var nameArray = response.data[0].name.split(" ");
-              window.location = "check?id=" + userIdString + "&" + nameArray[0] + "&" + nameArray[1];
+              window.location = "check?id=" + userIdString + "&name=" + response.data[0].name;
           }     
       });
   });
