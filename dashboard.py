@@ -18,6 +18,8 @@ class DashboardPage(webapp2.RequestHandler):
     	crush_name = user.crush_name
     	crush_pic = user.crush_pic
 
-    	
+    	self.response.headers['Content-Type'] = 'text/html'
+        path = os.path.join(os.path.dirname(__file__), 'dashboard.html')
+        self.response.out.write(template.render(path, {}))
 
 app = webapp2.WSGIApplication([('/dashboard/(\d*)', DashboardPage)], debug=True)

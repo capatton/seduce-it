@@ -1,12 +1,34 @@
-* {
-	margin: 0;
+html, body {
+    height: 100%;
+    min-height: 100%;
+    color: #fff;
 }
 
-body {
-	text-align: center;
-	background-color: #FFB8FF;
-	color: #370037;
-	/*background-image: url(/images/dark_fish_skin.png);*/
-	/*background-repeat: repeat;*/
-	padding: 0;
+div#mastercontainer {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin-bottom: -100px;
+}
+
+div#header {
+    background-color: #f00;
+    height: 100px;
+}
+
+div#content {
+}
+
+div#innercontentmiddle {
+    background-color: #0f0;
+    margin: 0 auto;
+    width: 300px;
+}
+
+div#footerclear {
+}
+
+div#footer {
+    background-color: #00f;
+    height: 100px;
 }

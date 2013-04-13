@@ -16,7 +16,7 @@ handlers:
 - url: /choose/.*
   static_files: choose.html
   upload: choose.html
-- url: /dashboard
+- url: /dashboard/.*
   script: dashboard.app
 - url: /fblogin
   static_files: fblogin.html

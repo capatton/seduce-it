@@ -5,3 +5,4 @@ class UserProfile(db.Model):
     user_id = db.StringProperty()
     crush_name = db.StringProperty()
     crush_id = db.StringProperty()
+    crush_pic = db.StringProperty()
