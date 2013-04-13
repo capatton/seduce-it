@@ -11,7 +11,7 @@ window.fbAsyncInit = function() {
 
 FB.getLoginStatus(function(response){
     if (response.status === 'connected') {
-    var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
+    var GetAllFriends = "SELECT name, uid, pic FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
     FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
     if (response && response.data) {
         responseData = response.data;
@@ -43,7 +43,7 @@ function ClickFunction() {
             if (responseData[j].name == crushName)
             {
                 crushId = responseData[j].uid;
-                crushPicLink = responseData[j].pic_small;
+                crushPicLink = responseData[j].pic;
             }
         }
 
