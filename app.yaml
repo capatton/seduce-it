@@ -11,11 +11,12 @@ handlers:
   static_dir: images
 - url: /js
   static_dir: js
-- url: /check
+- url: /check/.*
   script: check.app
-- url: /events
-  static_files: events.html
-  upload: events.html
+- url: /choose
+  script: choose.app
+- url: /dashboard
+  script: dashboard.app
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html
