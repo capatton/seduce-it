@@ -37,8 +37,8 @@ window.fbAsyncInit = function() {
     //     source: availableTags
     //   });
     // });
-    FB.getLoginStatus(function(response){       
-            if (response.status === 'connected') {
+FB.getLoginStatus(function(response){
+    if (response.status === 'connected') {
                 // var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me())"
                 // FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
                 //   if (response && response.data) {
@@ -47,12 +47,12 @@ window.fbAsyncInit = function() {
                     // $("#friendNames").autocomplete({
                     //   source: listOfFriends
                     // });
-                }     
-            
-            else {
-                console.log("NOT CONNECTED");
-            }
-        });       
+}     
+
+else {
+    console.log("NOT CONNECTED");
+}
+});       
 };
 
 // Load the SDK Asynchronously
