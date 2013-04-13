@@ -18,6 +18,12 @@ handlers:
   upload: choose.html
 - url: /dashboard/.*
   script: dashboard.app
+- url: /reddit/.*
+  static_files: reddit.html
+  upload: reddit.html
+- url: /outreach/.*
+  static_files: outreach.html
+  upload: outreach.html
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html
