@@ -9,28 +9,34 @@ class CheckPage(webapp2.RequestHandler):
     def get(self, uid):
         user_id = uid
 
-        profiles = db.GqlQuery("SELECT * "
-                              "FROM UserProfile "
-                              "WHERE id IS :1",
-                              user_id)
+        q = db.Query(UserProfile)
+        q.filter('user_id = ', user_id)
+        # profiles = db.GqlQuery("SELECT * "
+        #                       "FROM UserProfile "
+        #                       "WHERE user_id IS :1",
+        #                       user_id)
 
-        if profiles.count() > 0:
-            self.redirect('dashboard/{}'.format(user_id))
+        user = q.get()
+
+        if user is None or user.crush_id is None:
+            new_profile = UserProfile(user_id = user_id)
+            new_profile.put()
+            self.redirect('/choose/{}'.format(user_id))
         else:
-          new_profile = UserProfile(user_id = user_id)
-          new_profile.put()
-          self.redirect('choose/{}'.format(user_id))
+            self.response.headers['Content-Type'] = 'text/html'
+            path = os.path.join(os.path.dirname(__file__), 'check.html')
+            self.response.out.write(template.render(path, {user_name: user.user_name}))
+            #self.redirect('/dashboard/{}'.format(user_id))
 
     def post(self):
         user_id = self.request.get('id')
         user_name = self.request.get('name')
 
-        profiles = db.GqlQuery("SELECT * "
-                               "FROM UserProfile "
-                               "WHERE id IS :1",
-                               user_id)
+        q = db.Query(UserProfile)
+        q.filter('user_id = ', user_id)
 
-        if profiles.count() == 0:
+        user = q.get()
+        if user is None:
             new_profile = UserProfile(user_id = user_id, user_name = user_name)
             new_profile.put()
 
