@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+}
+
+body {
+	text-align: center;
+	background-color: #71AAD0;
+	color: #FCFAF7;
+	background-image: url(/images/dark_fish_skin.png);
+	background-repeat: repeat;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
+body > #container {
+	height: auto;
+	width: 100%;
+	min-height: 100%;
+}
+
+.footer, .push {
+	height: 2em;
+	background-color: #454545;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footer {
+	text-align: right;
+}
+
+.footer p {
+	margin-right: 3em;
+}
+
+.footer a {
+	text-decoration: none;
+	color: white;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.footer a:visited {
+	color:white;
+}
+
+h1 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 60pt;
+	margin-bottom: 0.1em;
+}
+
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.fb-login-button {
+	margin-bottom: 1em;
+}
