@@ -12,6 +12,9 @@ class MainPage(webapp2.RequestHandler):
     def output(self, x):
         self.response.out.write(x)
 
+    def post(self):
+    	x = 1
+
         
 
 
