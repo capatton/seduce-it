@@ -14,7 +14,6 @@ class CheckPage(webapp2.RequestHandler):
         q.filter('user_id = ', user_id)
 
         user = q.get()
-        logging.error('before if....')
         if user is None or user.crush_id is None:
             new_profile = UserProfile(user_id = user_id)
             new_profile.put()
