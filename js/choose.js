@@ -52,8 +52,12 @@ FB.getLoginStatus(function(response){
 else {
     console.log("NOT CONNECTED");
 }
-});       
+});
 };
+
+$('#choose_crush_button').on('click', function() {
+    $.post('/update', {user_id: '744778013', crush_id: , crush_name: })
+})
 
 // Load the SDK Asynchronously
 (function(d){

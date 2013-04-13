@@ -12,7 +12,6 @@ window.fbAsyncInit = function() {
             //not logged in upon opening the page
             if (response.status === 'connected') {
                 var userIdString = response.authResponse.userID;
-                $.post('/update', {user_id: '744778013', user_name: 'Nick Van Hoogenstyn'})
                 var getNameQuery = 'SELECT name FROM user WHERE uid=' + userIdString;
                 FB.api('/fql', 'GET', {q: getNameQuery}, function(response) {
                   if (response && response.data) {
