@@ -1,5 +1,6 @@
 // Additional JS functions here
 var responseData;
+var userID;
 clickedObject = {};
 window.fbAsyncInit = function() {
     FB.init({
@@ -27,6 +28,7 @@ function PostXContent(typeOfContent) {
   FB.getLoginStatus(function(response){       
     //not logged in upon opening the page
     if (response.status === 'connected') {
+      userID = response.authResponse.userID;
       //grab funny content
       $.getJSON("http://www.reddit.com/r/" + typeOfContent + "/.json?jsonp=?", function(data) { 
           // Grab one random number (representing one of the top ten stories).
@@ -46,22 +48,13 @@ function PostXContent(typeOfContent) {
           var postTitle = data.data.children[randomNumber].data.title;
 
 
-          //Post it to the user's wall
-           FB.ui(
-           {
-               method: 'feed',               
-               picture: postURL,
-               link: postURL,
-               description: postTitle,
-           },
-           function(response) {
-             if (response && response.post_id) {
-               alert('Post was published.');
-             } else {
-               alert('Post was not published.');
-             }
-           } 
-           );
+          FB.api('/me/feed', 'post', {message: postTitle, link: postURL, picture: postURL }, function(response) {
+          if (!response || response.error) {
+            alert('Error');
+          } else {
+            window.location = "/dashboard/" + userID;
+        }
+      });
 
 
       });
