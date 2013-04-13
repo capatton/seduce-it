@@ -1,5 +1,6 @@
 // Additional JS functions here
 var responseData;
+clickedObject = {};
 window.fbAsyncInit = function() {
     FB.init({
           appId      : '452746094806213', // App ID
@@ -9,6 +10,18 @@ window.fbAsyncInit = function() {
           xfbml      : true  // parse XFBML
       });
 };
+
+function postChoiceClick(event) {
+    if (!jQuery.isEmptyObject(clickedObject)) {
+      $('#'+clickedObject.attr('id')).toggleClass('post_choice_clicked');
+    }
+    clickedObject = $(this);
+    $(this).toggleClass('post_choice_clicked');
+};
+
+$(document).ready(function() {
+  $("div.post_choice").click(postChoiceClick);
+});
 
 function PostXContent(typeOfContent) {
   FB.getLoginStatus(function(response){       
@@ -54,34 +67,37 @@ function PostXContent(typeOfContent) {
       });
     }
   });
-}
+};
 
 function PostContent() {
-  var typeOfContent = $("#content_drop_down").val();
-  if (typeOfContent == "funny")
-  {
-    PostXContent("funny");
+  if(!jQuery.isEmptyObject(clickedObject)) {
+    PostXContent(clickedObject.attr('id'));
   }
-  else if (typeOfContent == "world_news")
-  {
-    PostXContent("worldnews");
-  }
-  else if (typeOfContent == "scientific")
-  {
-    PostXContent("science");
-  }
-  else if (typeOfContent == "music")
-  {
-    PostXContent("music");
-  }
-  else if (typeOfContent == "movies")
-  {
-    PostXContent("movies");
-  }
-  else
-  {
-    PostXContent("atheism");
-  }
+  // var typeOfContent = $("#content_drop_down").val();
+  // if (typeOfContent == "funny")
+  // {
+  //   PostXContent("funny");
+  // }
+  // else if (typeOfContent == "world_news")
+  // {
+  //   PostXContent("worldnews");
+  // }
+  // else if (typeOfContent == "scientific")
+  // {
+  //   PostXContent("science");
+  // }
+  // else if (typeOfContent == "music")
+  // {
+  //   PostXContent("music");
+  // }
+  // else if (typeOfContent == "movies")
+  // {
+  //   PostXContent("movies");
+  // }
+  // else
+  // {
+  //   PostXContent("atheism");
+  // }
 };
 
 // Load the SDK Asynchronously

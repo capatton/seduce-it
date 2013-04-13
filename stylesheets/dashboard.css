@@ -64,7 +64,7 @@ div#content {
 }
 
 #compliment_taste_m:hover:before {
-	content: "Feed his ego";
+	content: "What Likes were made for";
 }
 
 #compliment_taste_f:hover span {
@@ -72,7 +72,19 @@ div#content {
 }
 
 #compliment_taste_f:hover:before {
-	content: "Feed her ego";
+	content: "What Likes were made for";
+}
+
+#user_options .post_choice {
+	color: #370037;
+	background-color: #FFCCFF;
+}
+
+#user_options .post_choice_clicked {
+	background-color: #370037;
+	color: #FFCCFF;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
 #user_options div {
@@ -84,10 +96,6 @@ div#content {
 	width: 500px;
 	background-color: #FFCCFF;
 	font-size: 30px;
-}
-
-#user_options .subtext {
-	font-size: 20px;
 }
 
 #user_options a {
@@ -114,4 +122,9 @@ div#innercontentmiddle {
 
 #dashboard_intro {
 	font-size: 30px;
+}
+
+button {
+	cursor: pointer;
+	font-size: 40px;
 }

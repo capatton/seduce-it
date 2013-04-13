@@ -19,15 +19,15 @@
                 <img id="crush_portrait" src="{{ crush_pic }}"></img>
                 <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
                 <div id="user_options">
-                    <a style="display:block" href="/reddit">
+                    <a style="display:block" href="/reddit/{{ user_id }}">
                     <div id="reddit_post"><span>Post cool stuff</span></div>
                     </a>
                     {% if crush_sex == 'male' %}
                     <div id="like_crush_objects_m"><span>Like his stuff</span></div>
-                    <div id="compliment_taste_m"><span>Compliment his taste</span></div>
+                    <div id="compliment_taste_m"><span>Express common interest</span></div>
                     {% else %}
                     <div id="like_crush_objects_f"><span>Like her stuff</span></div>
-                    <div id="compliment_taste_f"><span>Compliment her taste</span></div>
+                    <div id="compliment_taste_f"><span>Express common interest</span></div>
                     {% endif %}
                 </div>
             </div>
