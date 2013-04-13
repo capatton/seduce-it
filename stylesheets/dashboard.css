@@ -103,7 +103,7 @@ div#content {
 }
 
 #compliment_taste_m:hover:before {
-	content: "A LOT of his photos";
+	content: "Likes = Love";
 }
 
 #compliment_taste_f:hover span {
@@ -117,7 +117,7 @@ div#content {
 }
 
 #compliment_taste_f:hover:before {
-	content: "A LOT of her photos";
+	content: "Likes = Love";
 }
 
 #user_options .post_choice {
