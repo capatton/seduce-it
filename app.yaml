@@ -23,6 +23,8 @@ handlers:
 - url: /outreach/.*
   static_files: outreach.html
   upload: outreach.html
+- url: /events/.*
+  script: events.app
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html

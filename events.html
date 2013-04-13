@@ -5,13 +5,48 @@
     <link rel='stylesheet' href='/stylesheets/dashboard.css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <title>Stalk her</title>
+    <title>Face time</title>
 </head>
 <body>
     <div id="fb-root"></div>
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/events.js"></script>
    
+    <div id="mastercontainer">
+        <div id="header">
+            <a href="/dashboard/{{ user_id }}"><p id="logo">Seduce It</p></a>
+            <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
+        </div>
+        <div id="content">
+            <div id="innercontentmiddle">
+                <a href="http://www.facebook.com/{{ crush_id }}"><img id="crush_portrait" src="{{ crush_pic }}"></img></a>
+                <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
+                <div id="user_options">
+                    <a style="display:block" href="/reddit/{{ user_id }}">
+                        <div id="reddit_post"><span>Post cool stuff</span></div>
+                    </a>
+                    {% if crush_sex == 'male' %}
+                    <a style="display:block" href="/events/{{ user_id }}">
+                        <div id="like_crush_objects_m"><span>See what he's up to</span></div>
+                    </a>
+                    <a style="display:block" href="/outreach/{{ user_id }}">
+                        <div id="compliment_taste_m"><span>Express common interest</span></div>
+                    </a>
+                    {% else %}
+                    <a style="display:block" href="/events/{{ user_id }}">
+                        <div id="like_crush_objects_f"><span>See what she's up to</span></div>
+                    </a>
+                    <a style="display:block" href="/outreach/{{ user_id }}">
+                        <div id="compliment_taste_f"><span>Express common interest</span></div>
+                    </a>
+                    {% endif %}
+                    <br/><br/><br/>
+                    <a style="display:block" href="/choose/{{ user_id }}">
+                        <div id="change_crush"><span>Change crushes</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

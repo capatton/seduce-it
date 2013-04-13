@@ -24,11 +24,19 @@
                         <div id="reddit_post"><span>Post cool stuff</span></div>
                     </a>
                     {% if crush_sex == 'male' %}
-                    <div id="like_crush_objects_m"><span>Like his stuff</span></div>
-                    <div id="compliment_taste_m"><span>Express common interest</span></div>
+                    <a style="display:block" href="/events/{{ user_id }}">
+                        <div id="like_crush_objects_m"><span>See what he's up to</span></div>
+                    </a>
+                    <a style="display:block" href="/outreach/{{ user_id }}">
+                        <div id="compliment_taste_m"><span>Express common interest</span></div>
+                    </a>
                     {% else %}
-                    <div id="like_crush_objects_f"><span>Like her stuff</span></div>
-                    <div id="compliment_taste_f"><span>Express common interest</span></div>
+                    <a style="display:block" href="/events/{{ user_id }}">
+                        <div id="like_crush_objects_f"><span>See what she's up to</span></div>
+                    </a>
+                    <a style="display:block" href="/outreach/{{ user_id }}">
+                        <div id="compliment_taste_f"><span>Express common interest</span></div>
+                    </a>
                     {% endif %}
                     <br/><br/><br/>
                     <a style="display:block" href="/choose/{{ user_id }}">

@@ -48,7 +48,7 @@ div#content {
 }
 
 #like_crush_objects_m:hover:before { 
-	content: "Show him some attention";
+	content: "Get some face time";
 }
 
 #like_crush_objects_f:hover span {
@@ -56,7 +56,7 @@ div#content {
 }
 
 #like_crush_objects_f:hover:before { 
-	content: "Show her some attention";
+	content: "Get some face time";
 }
 
 #compliment_taste_m:hover span {
