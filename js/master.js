@@ -11,10 +11,16 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response){       
             //not logged in upon opening the page
             if (response.status === 'connected') {
-                var userIdString = response.authResponse.userID; 
-                console.log("CONNECTED");
-                window.location = "check?id=" + userIdString;
-            } 
+                var userIdString = response.authResponse.userID;
+                var getNameQuery = 'SELECT name FROM user WHERE uid=' + userIdString;
+                FB.api('/fql', 'GET', {q: getNameQuery}, function(response) {
+                  if (response && response.data) {
+                      console.log("CONNECTED");
+                      var nameArray = response.data[0].name.split(" ");
+                      window.location = "check?id=" + userIdString + "&" + nameArray[0] + "&" + nameArray[1];
+                  }     
+              }); 
+            }
             else {
                 console.log("NOT CONNECTED");
                 window.location = "fblogin";
