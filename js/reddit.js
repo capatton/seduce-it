@@ -40,7 +40,8 @@ function PostXContent(typeOfContent) {
                 || (data.data.children[randomNumber].data.title).search("My") != -1
                 || (data.data.children[randomNumber].data.title).search("my") != -1
                 || (data.data.children[randomNumber].data.title).search("Family") != -1
-                || (data.data.children[randomNumber].data.title).search("family") != -1)
+                || (data.data.children[randomNumber].data.title).search("family") != -1
+                || (data.data.children[randomNumber].data.title).search("r/") != -1)
           {
             randomNumber = Math.floor(Math.random()*12) + 3 * 27 % 15;
           }
