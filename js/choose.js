@@ -60,12 +60,13 @@ function ClickFunction() {
           }
 
           $.post('/update', {user_id: userId, user_name: userName, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink, crush_sex: crushSex});
-            window.location = "/dashboard/" + userId;
+          setTimeout(function() { window.location = "/dashboard/" + userId; }, 1000);
+          //window.location = "/dashboard/" + userId;
 
      });
        }
   });
-}
+};
 
 // Load the SDK Asynchronously
 (function(d){

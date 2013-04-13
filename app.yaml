@@ -29,5 +29,7 @@ handlers:
   upload: fblogin.html
 - url: /update
   script: update.app
+- url: /reddit/.*
+  script: reddit.app
 - url: /
   script: main.app

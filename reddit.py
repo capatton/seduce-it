@@ -6,7 +6,7 @@ from userprofile import UserProfile
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
-class DashboardPage(webapp2.RequestHandler):
+class RedditPage(webapp2.RequestHandler):
     def get(self, uid):
     	user_id = uid
     	q = db.Query(UserProfile)
@@ -20,8 +20,8 @@ class DashboardPage(webapp2.RequestHandler):
     	crush_sex = user.crush_sex
 
     	self.response.headers['Content-Type'] = 'text/html'
-        path = os.path.join(os.path.dirname(__file__), 'dashboard.html')
+        path = os.path.join(os.path.dirname(__file__), 'reddit.html')
         self.response.out.write(template.render(path, {'user_name': user_name, 'user_id': user_id, 'crush_name': crush_name, 'crush_pic': crush_pic, 
         	                                            'crush_id': crush_id, 'crush_sex': crush_sex}))
 
-app = webapp2.WSGIApplication([('/dashboard/(\d*)', DashboardPage)], debug=True)
+app = webapp2.WSGIApplication([('/reddit/(\d*)', RedditPage)], debug=True)

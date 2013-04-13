@@ -7,18 +7,31 @@
     <title>Get some</title>
 </head>
 <body>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/dashboard.js"></script>
     <div id="mastercontainer">
-        <div id="header">This is the header</div>
+        <div id="header">
+            <p id="logo">Seduce It</p>
+            <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
+        </div>
         <div id="content">
             <div id="innercontentmiddle">
-                <p>This is some content</p>
-                <p>This is some content</p>
-                <p>This is some content</p>
-                <p>This is some content</p>
+                <img id="crush_portrait" src="{{ crush_pic }}"></img>
+                <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
+                <div id="user_options">
+                    <a style="display:block" href="/reddit/{{ user_id }}">
+                    <div id="reddit_post"><span>Post cool stuff</span></div>
+                    </a>
+                    {% if crush_sex == 'male' %}
+                    <div id="like_crush_objects_m"><span>Like his stuff</span></div>
+                    <div id="compliment_taste_m"><span>Express common interest</span></div>
+                    {% else %}
+                    <div id="like_crush_objects_f"><span>Like her stuff</span></div>
+                    <div id="compliment_taste_f"><span>Express common interest</span></div>
+                    {% endif %}
+                </div>
             </div>
         </div>
-        <div id="footerclear"></div>
     </div>
-    <div id="footer">This is the footer</div>
 </body>
 </html>
