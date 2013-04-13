@@ -18,10 +18,6 @@ handlers:
   upload: choose.html
 - url: /dashboard
   script: dashboard.app
-- url: /test
-  script: test.app
-- url: /test/.*
-  script: test2.app
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html
