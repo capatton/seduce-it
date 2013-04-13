@@ -11,10 +11,6 @@ class CheckPage(webapp2.RequestHandler):
 
         q = db.Query(UserProfile)
         q.filter('user_id = ', user_id)
-        # profiles = db.GqlQuery("SELECT * "
-        #                       "FROM UserProfile "
-        #                       "WHERE user_id IS :1",
-        #                       user_id)
 
         user = q.get()
 
