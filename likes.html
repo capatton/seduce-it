@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel='stylesheet' href='/stylesheets/dashboard.css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Likes on Likes</title>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript">
+        crushId = "{{ crush_id }}";
+    </script>
+    <script type="text/javascript" src="/js/likes.js"></script>
+    <div id="mastercontainer">
+        <div id="header">
+            <a href="/dashboard/{{ user_id }}"><p id="logo">Seduce It</p></a>
+            <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
+        </div>
+        <div id="content">
+            <div id="innercontentmiddle">
+                <p id="dashboard_intro">How many photos do you want to like? <br/>More likes means more love.</p>
+            </div>
+        </div>
+        <div id="footer_clear"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
