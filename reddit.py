@@ -14,6 +14,7 @@ class RedditPage(webapp2.RequestHandler):
     	user = q.get()
 
     	user_name = user.user_name
+        logging.error('in reddit, user name is {}'.format(user_name))
     	crush_id = user.crush_id
     	crush_name = user.crush_name
     	crush_pic = user.crush_pic

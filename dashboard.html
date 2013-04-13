@@ -11,16 +11,16 @@
     <script type="text/javascript" src="/js/dashboard.js"></script>
     <div id="mastercontainer">
         <div id="header">
-            <p id="logo">Seduce It</p>
+            <a href="/dashboard/{{ user_id }}"><p id="logo">Seduce It</p></a>
             <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
         </div>
         <div id="content">
             <div id="innercontentmiddle">
-                <img id="crush_portrait" src="{{ crush_pic }}"></img>
+                <a href="http://www.facebook.com/{{ crush_id }}"><img id="crush_portrait" src="{{ crush_pic }}"></img></a>
                 <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
                 <div id="user_options">
                     <a style="display:block" href="/reddit/{{ user_id }}">
-                    <div id="reddit_post"><span>Post cool stuff</span></div>
+                        <div id="reddit_post"><span>Post cool stuff</span></div>
                     </a>
                     {% if crush_sex == 'male' %}
                     <div id="like_crush_objects_m"><span>Like his stuff</span></div>
@@ -29,6 +29,10 @@
                     <div id="like_crush_objects_f"><span>Like her stuff</span></div>
                     <div id="compliment_taste_f"><span>Express common interest</span></div>
                     {% endif %}
+                    <br/><br/><br/>
+                    <a style="display:block" href="/choose/{{ user_id }}">
+                        <div id="change_crush"><span>Change crushes</span></div>
+                    </a>
                 </div>
             </div>
         </div>

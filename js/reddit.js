@@ -66,31 +66,6 @@ function PostContent() {
   if(!jQuery.isEmptyObject(clickedObject)) {
     PostXContent(clickedObject.attr('id'));
   }
-  // var typeOfContent = $("#content_drop_down").val();
-  // if (typeOfContent == "funny")
-  // {
-  //   PostXContent("funny");
-  // }
-  // else if (typeOfContent == "world_news")
-  // {
-  //   PostXContent("worldnews");
-  // }
-  // else if (typeOfContent == "scientific")
-  // {
-  //   PostXContent("science");
-  // }
-  // else if (typeOfContent == "music")
-  // {
-  //   PostXContent("music");
-  // }
-  // else if (typeOfContent == "movies")
-  // {
-  //   PostXContent("movies");
-  // }
-  // else
-  // {
-  //   PostXContent("atheism");
-  // }
 };
 
 // Load the SDK Asynchronously

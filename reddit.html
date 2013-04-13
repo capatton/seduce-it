@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/js/reddit.js"></script>
     <div id="mastercontainer">
         <div id="header">
-            <p id="logo">Seduce It</p>
+            <a href="/dashboard/{{ user_id }}"><p id="logo">Seduce It</p></a>
             <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
         </div>
         <div id="content">
@@ -29,25 +29,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <!--
-    <h1></h1>
-    <h2>Post interesting content on your timeline</h2>
-
-    <select id="content_drop_down" STYLE="width: 230px" STYLE="height: 300px">
-    <option value="funny">Funny</option>
-    <option value="music">Music</option>
-    <option value="movies">Movies</option>
-    <option value="world_news">World News</option>
-    <option value="atheist">Atheist</option>
-    <option value="scientific">Scientific</option>
-
-    </select>
-
-	<button id="post_content_button" type="button" onClick="PostContent()">Post!</button>
-    -->
 </body>
 </html>
