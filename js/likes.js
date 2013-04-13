@@ -2,7 +2,7 @@ var objectIdsArray = [];
 // Additional JS functions here
 window.fbAsyncInit = function() {
   FB.init({
-          appId      : '452746094806213', // App ID
+          appId      : '248021992007918', // App ID
           channelUrl : '//localhost:8080/channel.html', // Channel File
           status     : true, // check login status
           cookie     : true, // enable cookies to allow the server to access the session
@@ -14,6 +14,7 @@ window.fbAsyncInit = function() {
 function doFunction(i) {
   FB.api('/' + objectIdsArray[i] + '/likes', 'post', {}, function(response) {
     if (!response || response.error) {
+      console.log(response.error);
     } 
     else {
     }
