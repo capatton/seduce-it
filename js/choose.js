@@ -1,4 +1,5 @@
 // Additional JS functions here
+var responseData;
 window.fbAsyncInit = function() {
     FB.init({
           appId      : '148310075327662', // App ID
@@ -13,6 +14,7 @@ FB.getLoginStatus(function(response){
     var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
     FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
     if (response && response.data) {
+        responseData = response.data;
         console.log("HI");
         var listOfFriends = [""];
         for (var i = 0; i < response.data.length; ++i)
@@ -31,9 +33,25 @@ else {
 });
 };
 
-$('#choose_crush_button').on('click', function() {
-    $.post('/update', {user_id: '744778013', crush_id: , crush_name: })
-})
+function ClickFunction() {
+    FB.getLoginStatus(function(response){
+     var crushName = $("#friendNames").val();
+     var crushId = 0;
+      if (response.status === 'connected') {
+        var userId = response.authResponse.userID;
+        for (var j = 0; j < responseData.length; ++j)
+        {
+            if (responseData[j].name == crushName)
+            {
+                crushId = responseData[j].uid;
+                crushPicLink = responseData[j].pic_small;
+            }
+        }
+        $.post('/update', {user_id: userId, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink});
+      }
+      window.location = "dashboard/" + userId;
+  });
+}
 
 // Load the SDK Asynchronously
 (function(d){
