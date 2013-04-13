@@ -35,6 +35,18 @@ div#header {
 div#content {
 }
 
+#user_options div {
+	margin: 0 auto;
+	width: 500px;
+	background-color: #FFCCFF;
+	font-size: 25px;
+}
+
+#user_options div:hover {
+	background-color: #370037;
+	color: #FFCCFF;
+}
+
 #crush_portrait {
 	border: solid;
 	border-color: white;
