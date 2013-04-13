@@ -13,7 +13,6 @@ FB.getLoginStatus(function(response){
     var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
     FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
     if (response && response.data) {
-        console.log("HI");
         var listOfFriends = [""];
         for (var i = 0; i < response.data.length; ++i)
         {
@@ -33,6 +32,7 @@ else {
 
 $('#choose_crush_button').on('click', function() {
     //$.post('/update', {user_id: '744778013', crush_id: , crush_name: })
+    window.location = 'dashboard/744778013';
 });
 
 // Load the SDK Asynchronously
