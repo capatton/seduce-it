@@ -18,14 +18,14 @@ class CheckPage(webapp2.RequestHandler):
 
         user = q.get()
 
-        if user is None or user.crush_id is None:
+        if user is None:
             new_profile = UserProfile(user_id = user_id)
             new_profile.put()
-            self.redirect('/choose/{}'.format(user_id))
+            #self.redirect('/choose/{}'.format(user_id))
         else:
             self.response.headers['Content-Type'] = 'text/html'
             path = os.path.join(os.path.dirname(__file__), 'check.html')
-            self.response.out.write(template.render(path, {user_name: user.user_name}))
+            self.response.out.write(template.render(path, {'user_name': user.user_name, 'user_id': user.user_id}))
             #self.redirect('/dashboard/{}'.format(user_id))
 
     def post(self):
