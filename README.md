@@ -1,3 +1,3 @@
-Event Detective
+Seduce It
 ==============
-Get quick stats about events so you can decide which ones to attend.
+Woo that special someone with our genius
