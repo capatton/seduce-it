@@ -35,11 +35,64 @@ div#header {
 div#content {
 }
 
+#reddit_post:hover span {
+	display:none;
+}
+
+#reddit_post:hover:before { 
+	content: "Let's make you look interesting";
+}
+
+#like_crush_objects_m:hover span {
+	display:none;
+}
+
+#like_crush_objects_m:hover:before { 
+	content: "Show him some attention";
+}
+
+#like_crush_objects_f:hover span {
+	display:none;
+}
+
+#like_crush_objects_f:hover:before { 
+	content: "Show her some attention";
+}
+
+#compliment_taste_m:hover span {
+	display: none;
+}
+
+#compliment_taste_m:hover:before {
+	content: "Feed his ego";
+}
+
+#compliment_taste_f:hover span {
+	display: none;
+}
+
+#compliment_taste_f:hover:before {
+	content: "Feed her ego";
+}
+
 #user_options div {
 	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	width: 500px;
 	background-color: #FFCCFF;
-	font-size: 25px;
+	font-size: 30px;
+}
+
+#user_options .subtext {
+	font-size: 20px;
+}
+
+#user_options a {
+	text-decoration: none;
+	color: #370037;
 }
 
 #user_options div:hover {

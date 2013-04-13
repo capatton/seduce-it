@@ -19,5 +19,7 @@ class UpdateHandler(webapp2.RequestHandler):
 
         user.put()
 
+        return
+
 
 app = webapp2.WSGIApplication([('/update', UpdateHandler)], debug=True)

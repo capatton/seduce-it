@@ -7,6 +7,8 @@
     <title>Get some</title>
 </head>
 <body>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/dashboard.js"></script>
     <div id="mastercontainer">
         <div id="header">
             <p id="logo">Seduce It</p>
@@ -17,13 +19,15 @@
                 <img id="crush_portrait" src="{{ crush_pic }}"></img>
                 <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
                 <div id="user_options">
-                    <div id="reddit_post"><p>Post cool stuff</div>
+                    <a style="display:block" href="/reddit">
+                    <div id="reddit_post"><span>Post cool stuff</span></div>
+                    </a>
                     {% if crush_sex == 'male' %}
-                    <div id="like_crush_objects"><p>Like his stuff</div>
-                    <div id="compliment_taste"><p>Compliment his taste</div>
+                    <div id="like_crush_objects_m"><span>Like his stuff</span></div>
+                    <div id="compliment_taste_m"><span>Compliment his taste</span></div>
                     {% else %}
-                    <div id="like_crush_objects"><p>Like her stuff</div>
-                    <div id="compliment_taste"><p>Compliment her taste</div>
+                    <div id="like_crush_objects_f"><span>Like her stuff</span></div>
+                    <div id="compliment_taste_f"><span>Compliment her taste</span></div>
                     {% endif %}
                 </div>
             </div>
