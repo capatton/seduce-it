@@ -9,7 +9,8 @@ window.fbAsyncInit = function() {
         });
   
   FB.Event.subscribe('auth.login', function(response) {
-    window.location="events"
+    var userIdString = response.authResponse.userID;        
+    window.location="check?=" + userIdString;
   });
 };
 

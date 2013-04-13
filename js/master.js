@@ -9,10 +9,11 @@ window.fbAsyncInit = function() {
       });
 
     FB.getLoginStatus(function(response){
+            var userIdString = response.authResponse.userID;        
             //not logged in upon opening the page
             if (response.status === 'connected') {
                 console.log("CONNECTED");
-                window.location = "events";
+                window.location = "check?id=" + userIdString;
             } 
             else {
                 console.log("NOT CONNECTED");
