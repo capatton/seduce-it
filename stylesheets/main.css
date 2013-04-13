@@ -51,6 +51,15 @@ body > #container {
 	text-decoration: underline;
 }
 
+.ui-widget {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#friendNames {
+	font-size: 50px;
+}
+
 .footer a:visited {
 	color:white;
 }
@@ -63,6 +72,11 @@ h1 {
 
 h2 {
 	font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+	cursor: pointer;
+	font-size: 40px;
 }
 
 .fb-login-button {
