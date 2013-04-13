@@ -11,7 +11,7 @@ window.fbAsyncInit = function() {
 
 FB.getLoginStatus(function(response){
     if (response.status === 'connected') {
-    var GetAllFriends = "SELECT name, uid, pic FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
+    var GetAllFriends = "SELECT name, uid, pic, sex FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
     FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
     if (response && response.data) {
         responseData = response.data;
@@ -36,6 +36,7 @@ function ClickFunction() {
     FB.getLoginStatus(function(response){
      var crushName = $("#friendNames").val();
      var crushId = 0;
+     var crushSex;
       if (response.status === 'connected') {
         var userId = response.authResponse.userID;
         for (var j = 0; j < responseData.length; ++j)
@@ -44,10 +45,11 @@ function ClickFunction() {
             {
                 crushId = responseData[j].uid;
                 crushPicLink = responseData[j].pic;
+                crushSex = responseData[j].sex;
             }
         }
 
-        $.post('/update', {user_id: userId, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink});
+        $.post('/update', {user_id: userId, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink, crush_sex: crushSex});
       }
       window.location = "/dashboard/" + userId;
   });
