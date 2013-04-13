@@ -6,3 +6,4 @@ class UserProfile(db.Model):
     crush_name = db.StringProperty()
     crush_id = db.StringProperty()
     crush_pic = db.StringProperty()
+    crush_sex = db.StringProperty()

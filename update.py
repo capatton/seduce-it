@@ -14,6 +14,7 @@ class UpdateHandler(webapp2.RequestHandler):
         user = q.get()
 
         for arg in self.request.arguments():
+            logging.error('arg:{}, value: {}'.format(arg, self.request.get(arg)))
             setattr(user, arg, self.request.get(arg))
 
         user.put()

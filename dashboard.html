@@ -18,8 +18,13 @@
                 <p id="dashboard_intro">It looks like you're after {{ crush_name }}...</p>
                 <div id="user_options">
                     <div id="reddit_post"><p>Post cool stuff</div>
+                    {% if crush_sex == 'male' %}
                     <div id="like_crush_objects"><p>Like his stuff</div>
-                    <div id="compliment_taste"><p>Compliment their taste</div>
+                    <div id="compliment_taste"><p>Compliment his taste</div>
+                    {% else %}
+                    <div id="like_crush_objects"><p>Like her stuff</div>
+                    <div id="compliment_taste"><p>Compliment her taste</div>
+                    {% endif %}
                 </div>
             </div>
         </div>
