@@ -1,8 +1,9 @@
 // Additional JS functions here
 var responseData;
+var userId;
 window.fbAsyncInit = function() {
     FB.init({
-          appId      : '148310075327662', // App ID
+          appId      : '452746094806213', // App ID
           channelUrl : '//localhost:8080/channel.html', // Channel File
           status     : true, // check login status
           cookie     : true, // enable cookies to allow the server to access the session
@@ -37,21 +38,32 @@ function ClickFunction() {
      var crushName = $("#friendNames").val();
      var crushId = 0;
      var crushSex;
+     var userName;
       if (response.status === 'connected') {
-        var userId = response.authResponse.userID;
-        for (var j = 0; j < responseData.length; ++j)
-        {
-            if (responseData[j].name == crushName)
-            {
-                crushId = responseData[j].uid;
-                crushPicLink = responseData[j].pic;
-                crushSex = responseData[j].sex;
-            }
-        }
+        userId = response.authResponse.userID;
+         var getUserName = "SELECT name FROM user WHERE uid = me()"
+         FB.api('/fql', 'GET', {q: getUserName}, function(response) {
+          userName = response.data[0].name;
 
-        $.post('/update', {user_id: userId, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink, crush_sex: crushSex});
-      }
-      window.location = "/dashboard/" + userId;
+          for (var j = 0; j < responseData.length; ++j)
+          {
+              if (responseData[j].name == crushName)
+              {
+                  crushId = responseData[j].uid;
+                  crushPicLink = responseData[j].pic;
+                  crushSex = responseData[j].sex;
+              }
+              if (responseData[j].uid === userId)
+              {
+                userName = responseData[j].name;
+              }
+          }
+
+          $.post('/update', {user_id: userId, user_name: userName, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink, crush_sex: crushSex});
+            window.location = "/dashboard/" + userId;
+
+     });
+       }
   });
 };
 
