@@ -12,7 +12,7 @@ window.fbAsyncInit = function() {
             //not logged in upon opening the page
             if (response.status === 'connected') {
                 console.log("CONNECTED");
-                window.location = "events";
+                window.location = "check";
             } 
             else {
                 console.log("NOT CONNECTED");

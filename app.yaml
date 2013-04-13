@@ -11,6 +11,8 @@ handlers:
   static_dir: images
 - url: /js
   static_dir: js
+- url: /check
+  script: check.app
 - url: /events
   static_files: events.html
   upload: events.html
