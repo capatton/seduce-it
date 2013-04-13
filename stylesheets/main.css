@@ -4,10 +4,10 @@
 
 body {
 	text-align: center;
-	background-color: #71AAD0;
-	color: #FCFAF7;
-	background-image: url(/images/dark_fish_skin.png);
-	background-repeat: repeat;
+	background-color: #FFB8FF;
+	color: #370037;
+	/*background-image: url(/images/dark_fish_skin.png);*/
+	/*background-repeat: repeat;*/
 	padding: 0;
 }
 

@@ -13,8 +13,9 @@ handlers:
   static_dir: js
 - url: /check/.*
   script: check.app
-- url: /choose
-  script: choose.app
+- url: /choose/.*
+  static_files: choose.html
+  upload: choose.html
 - url: /dashboard
   script: dashboard.app
 - url: /test
