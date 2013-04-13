@@ -10,14 +10,18 @@ window.fbAsyncInit = function() {
   FB.getLoginStatus(function(response){
     if (response.status === 'connected') {
       //name, date, friends attending, link
-    var getEventsOfCrush = 'SELECT name, privacy, start_time, eid FROM event WHERE eid IN (SELECT eid FROM event_member WHERE uid = 744778013 AND rsvp_status = "attending" AND start_time > now()) AND privacy="OPEN" LIMIT 3';
+      console.log('crush: ' + crushId);
+    var getEventsOfCrush = 'SELECT name, privacy, start_time, eid FROM event WHERE eid IN (SELECT eid FROM event_member WHERE uid = ' + crushId + ' AND rsvp_status = "attending" AND start_time > now()) LIMIT 3';
     FB.api('/fql', 'GET', {q: getEventsOfCrush}, function(response) {
     if (response && response.data) {
         for (var i = 0; i < response.data.length; ++i)
         {
-          eventDataArray.push([response.data[i].name, response.data[i].start_time, response.data[i].eid]);
+          var date = new Date(response.data[i].start_time);
+          eventDataArray.push([response.data[i].name, date.toDateString(), response.data[i].eid]);
         }
     }
+
+    console.log('event length:' + eventDataArray.length);
     //NICK: At this point, eventDataArray has the data stored as tuples - {name, start_time, eid}
     // need to set each of the event IDs
     eventIDs = ["event1", "event2", "event3"];
@@ -26,7 +30,6 @@ window.fbAsyncInit = function() {
       eventObj = $("#" + eventIDs[i]);
       eventObj.children(".event_title").text(eventDataArray[i][0]);
       eventObj.children(".event_date").text(eventDataArray[i][1]);
-      eventObj.children("");
       eventLinkObj = $("#" + eventLinkIDs[i]);
       eventLinkObj.attr("href", "http://www.facebook.com/events/" + eventDataArray[i][2]);
     }
