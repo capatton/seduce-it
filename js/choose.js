@@ -47,11 +47,12 @@ function ClickFunction() {
             }
         }
 
+        console.log(userId + ',' + crushId + ',' + crushName + ',' + crushPicLink);
         $.post('/update', {user_id: userId, crush_id: crushId, crush_name: crushName, crush_pic: crushPicLink});
       }
       window.location = "/dashboard/" + userId;
   });
-}
+};
 
 // Load the SDK Asynchronously
 (function(d){

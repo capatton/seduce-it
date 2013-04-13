@@ -8,17 +8,16 @@
 </head>
 <body>
     <div id="mastercontainer">
-        <div id="header">This is the header</div>
+        <div id="header">
+            <p id="logo">Seduce It</p>
+            <p id="user_status">Logged in as <a href="http://www.facebook.com/{{ user_id }}">{{ user_name }}</a></p>
+        </div>
         <div id="content">
             <div id="innercontentmiddle">
-                <p>This is some content</p>
-                <p>This is some content</p>
-                <p>This is some content</p>
-                <p>This is some content</p>
+                <img id="crush_portrait" src="{{ crush_pic }}"></img>
+                <p id="dashboard_intro">It looks like you're chasing {{ crush_name }}...</p>
             </div>
         </div>
-        <div id="footerclear"></div>
     </div>
-    <div id="footer">This is the footer</div>
 </body>
 </html>
