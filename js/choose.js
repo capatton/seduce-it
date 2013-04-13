@@ -8,35 +8,6 @@ window.fbAsyncInit = function() {
           xfbml      : true  // parse XFBML
       });
 
-    // $(function() {
-    //   var availableTags = [
-    //     "ActionScript",
-    //     "AppleScript",
-    //     "Asp",
-    //     "BASIC",
-    //     "C",
-    //     "C++",
-    //     "Clojure",
-    //     "COBOL",
-    //     "ColdFusion",
-    //     "Erlang",
-    //     "Fortran",
-    //     "Groovy",
-    //     "Haskell",
-    //     "Java",
-    //     "JavaScript",
-    //     "Lisp",
-    //     "Perl",
-    //     "PHP",
-    //     "Python",
-    //     "Ruby",
-    //     "Scala",
-    //     "Scheme"
-    //   ];
-    //   $( "#tags" ).autocomplete({
-    //     source: availableTags
-    //   });
-    // });
 FB.getLoginStatus(function(response){
     if (response.status === 'connected') {
     var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
