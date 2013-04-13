@@ -17,7 +17,7 @@ window.fbAsyncInit = function() {
                   if (response && response.data) {
                       console.log("CONNECTED");
                       $.post("check", { id: userIdString, name: response.data[0].name });
-                      window.location = "check";
+                      window.location = "check/" + userIdString;
                   }     
               }); 
             }
