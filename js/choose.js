@@ -39,16 +39,21 @@ window.fbAsyncInit = function() {
     // });
 FB.getLoginStatus(function(response){
     if (response.status === 'connected') {
-                // var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me())"
-                // FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
-                //   if (response && response.data) {
-                    console.log("HI");
+    var GetAllFriends = "SELECT name, uid, pic_small FROM user WHERE uid IN (SELECT uid1 FROM friend WHERE uid2=me()) ORDER BY name"
+    FB.api('/fql', 'GET', {q: GetAllFriends}, function(response) {
+    if (response && response.data) {
+        console.log("HI");
+        var listOfFriends = [""];
+        for (var i = 0; i < response.data.length; ++i)
+        {
+            listOfFriends.push(response.data[i].name);
+        }
 
-                    // $("#friendNames").autocomplete({
-                    //   source: listOfFriends
-                    // });
-}     
-
+        $("#friendNames").autocomplete({
+          source: listOfFriends
+        });
+    }});     
+}
 else {
     console.log("NOT CONNECTED");
 }
