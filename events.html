@@ -19,29 +19,28 @@
         </div>
         <div id="content">
             <div id="innercontentmiddle">
-                <p id="dashboard_intro">Get some face time</p>
-                <div id="user_options">
-                    <a style="display:block" href="/reddit/{{ user_id }}">
-                        <div id="reddit_post"><span>Post cool stuff</span></div>
+                <p id="dashboard_intro">Be a social butterfly</p>
+                <div id="event_list">
+                	<a style="display:block" id="event_link1" href="http://www.google.com">
+                		<div class="event" id="event1">
+                            <p class="event_title"></p>
+                            <p class="event_date"></p>
+                            <p class="event_friends"></p>
+                        </div>
+                	</a>
+                    <a style="display:block" id="event_link2" href="http://www.google.com">
+                        <div class="event" id="event2">
+                            <p class="event_title"></p>
+                            <p class="event_date"></p>
+                            <p class="event_friends"></p>
+                        </div>
                     </a>
-                    {% if crush_sex == 'male' %}
-                    <a style="display:block" href="/events/{{ user_id }}">
-                        <div id="like_crush_objects_m"><span>See what he's up to</span></div>
-                    </a>
-                    <a style="display:block" href="/outreach/{{ user_id }}">
-                        <div id="compliment_taste_m"><span>Express common interest</span></div>
-                    </a>
-                    {% else %}
-                    <a style="display:block" href="/events/{{ user_id }}">
-                        <div id="like_crush_objects_f"><span>See what she's up to</span></div>
-                    </a>
-                    <a style="display:block" href="/outreach/{{ user_id }}">
-                        <div id="compliment_taste_f"><span>Express common interest</span></div>
-                    </a>
-                    {% endif %}
-                    <br/><br/><br/>
-                    <a style="display:block" href="/choose/{{ user_id }}">
-                        <div id="change_crush"><span>Change crushes</span></div>
+                    <a style="display:block" id="event_link3" href="http://www.google.com">
+                        <div class="event" id="event3">
+                            <p class="event_title"></p>
+                            <p class="event_date"></p>
+                            <p class="event_friends"></p>
+                        </div>
                     </a>
                 </div>
             </div>

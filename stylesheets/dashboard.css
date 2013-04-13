@@ -13,6 +13,45 @@ div#mastercontainer {
     margin-bottom: -100px;
 }
 
+#event_list .event {
+	padding: 2px;
+}
+
+#event_list .event_title {
+	font-size: 35px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+}
+
+#event_list .event_date {
+	font-size: 20px;
+}
+
+#event_list .event_friends {
+	font-size: 20px;
+}
+
+#event_list .event:hover {
+	background-color: #370037;
+	color: #FFCCFF;
+}
+
+#event_list div {
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 500px;
+	background-color: #FFCCFF;
+	font-size: 30px;
+}
+
+#event_list a {
+	text-decoration: none;
+	color: #370037;
+}
+
 #user_status {
 	padding-right: 25px;
 	float: right;
@@ -83,8 +122,8 @@ div#content {
 #user_options .post_choice_clicked {
 	background-color: #370037;
 	color: #FFCCFF;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	/*margin-top: 25px;
+	margin-bottom: 25px;*/
 }
 
 #user_options div {
@@ -121,7 +160,7 @@ div#innercontentmiddle {
 }
 
 #dashboard_intro {
-	font-size: 30px;
+	font-size: 40px;
 }
 
 button {

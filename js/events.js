@@ -19,6 +19,17 @@ window.fbAsyncInit = function() {
         }
     }
     //NICK: At this point, eventDataArray has the data stored as tuples - {name, start_time, eid}
+    // need to set each of the event IDs
+    eventIDs = ["event1", "event2", "event3"];
+    eventLinkIDs = ["event_link1", "event_link2", "event_link3"];
+    for (var i = 0; i < eventIDs.length; i++) {
+      eventObj = $("#" + eventIDs[i]);
+      eventObj.children(".event_title").text(eventDataArray[i][0]);
+      eventObj.children(".event_date").text(eventDataArray[i][1]);
+      eventObj.children("");
+      eventLinkObj = $("#" + eventLinkIDs[i]);
+      eventLinkObj.attr("href", "http://www.facebook.com/events/" + eventDataArray[i][2]);
+    }
 
   })}});     
 
