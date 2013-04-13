@@ -61,8 +61,8 @@ else {
 };
 
 $('#choose_crush_button').on('click', function() {
-    $.post('/update', {user_id: '744778013', crush_id: , crush_name: })
-})
+    //$.post('/update', {user_id: '744778013', crush_id: , crush_name: })
+});
 
 // Load the SDK Asynchronously
 (function(d){
