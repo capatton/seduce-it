@@ -9,8 +9,15 @@ window.fbAsyncInit = function() {
         });
   
   FB.Event.subscribe('auth.login', function(response) {
-    var userIdString = response.authResponse.userID;        
-    window.location="check?=" + userIdString;
+        var userIdString = response.authResponse.userID;
+        var getNameQuery = 'SELECT name FROM user WHERE uid=' + userIdString;
+        FB.api('/fql', 'GET', {q: getNameQuery}, function(response) {
+          if (response && response.data) {
+              console.log("CONNECTED");
+              var nameArray = response.data[0].name.split(" ");
+              window.location = "check?id=" + userIdString + "&" + nameArray[0] + "&" + nameArray[1];
+          }     
+      });
   });
 };
 
