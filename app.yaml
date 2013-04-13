@@ -2,7 +2,7 @@ application: seduce-it
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: true
+threadsafe: false
 
 handlers:
 - url: /stylesheets
@@ -17,6 +17,10 @@ handlers:
   script: choose.app
 - url: /dashboard
   script: dashboard.app
+- url: /test
+  script: test.app
+- url: /test/.*
+  script: test2.app
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html

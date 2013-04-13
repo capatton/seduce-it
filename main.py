@@ -4,6 +4,8 @@ from google.appengine.ext.webapp import template
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+    	self.redirect('test/12345')
+
         self.response.headers['Content-Type'] = 'text/html'
         path = os.path.join(os.path.dirname(__file__), 'master.html')
         self.response.out.write(template.render(path, {}))
