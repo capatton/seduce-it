@@ -20,9 +20,8 @@ handlers:
   script: dashboard.app
 - url: /reddit/.*
   script: reddit.app
-- url: /outreach/.*
-  static_files: outreach.html
-  upload: outreach.html
+- url: /likes/.*
+  script: likes.app
 - url: /events/.*
   script: events.app
 - url: /fblogin

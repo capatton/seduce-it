@@ -103,7 +103,7 @@ div#content {
 }
 
 #compliment_taste_m:hover:before {
-	content: "What Likes were made for";
+	content: "A LOT of his photos";
 }
 
 #compliment_taste_f:hover span {
@@ -111,7 +111,7 @@ div#content {
 }
 
 #compliment_taste_f:hover:before {
-	content: "What Likes were made for";
+	content: "A LOT of her photos";
 }
 
 #user_options .post_choice {
