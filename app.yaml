@@ -25,5 +25,7 @@ handlers:
 - url: /fblogin
   static_files: fblogin.html
   upload: fblogin.html
+- url: /update
+  script: update.app
 - url: /
   script: main.app

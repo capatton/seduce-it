@@ -25,4 +25,5 @@ class CheckPage(webapp2.RequestHandler):
         else:
             self.redirect('/dashboard/{}'.format(user_id))
 
+
 app = webapp2.WSGIApplication([('/check/(\d*)', CheckPage)], debug=True)

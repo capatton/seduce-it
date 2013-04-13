@@ -1,5 +1,6 @@
 import webapp2
 import os
+import logging
 from google.appengine.ext.webapp import template
 
 class MainPage(webapp2.RequestHandler):
@@ -12,10 +13,5 @@ class MainPage(webapp2.RequestHandler):
     def output(self, x):
         self.response.out.write(x)
 
-    def post(self):
-    	x = 1
-
         
-
-
 app = webapp2.WSGIApplication([('/', MainPage)], debug=True)
